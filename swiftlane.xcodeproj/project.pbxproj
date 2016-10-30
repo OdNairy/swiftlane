@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE097BE51DC2A53100F2AF2D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE097BE41DC2A53100F2AF2D /* NetworkHelper.swift */; };
 		OBJ_19 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE097BE41DC2A53100F2AF2D /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		OBJ_11 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = SOURCE_ROOT; };
 		OBJ_13 /* swiftlane */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftlane; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
