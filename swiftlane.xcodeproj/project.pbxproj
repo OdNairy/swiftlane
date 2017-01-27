@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		FE097BE51DC2A53100F2AF2D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE097BE41DC2A53100F2AF2D /* NetworkHelper.swift */; };
+		FE5111D51DC689BC00DA220C /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5111D41DC689BC00DA220C /* Regex.swift */; };
+		FE5111D71DC68CB800DA220C /* PySwiftyRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5111D61DC68CB800DA220C /* PySwiftyRegex.swift */; };
+		FEEA88071DE389490086134E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEA88061DE389490086134E /* JSON.swift */; };
+		FEEAAC831DECB68F007A7269 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEAAC821DECB68F007A7269 /* SessionDelegate.swift */; };
+		FEEAAC871DECC397007A7269 /* PortalClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEAAC861DECC397007A7269 /* PortalClient.swift */; };
 		OBJ_19 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE097BE41DC2A53100F2AF2D /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		FE5111D41DC689BC00DA220C /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		FE5111D61DC68CB800DA220C /* PySwiftyRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PySwiftyRegex.swift; sourceTree = "<group>"; };
+		FEEA88061DE389490086134E /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		FEEAAC821DECB68F007A7269 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		FEEAAC861DECC397007A7269 /* PortalClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalClient.swift; sourceTree = "<group>"; };
 		OBJ_11 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = SOURCE_ROOT; };
-		OBJ_13 /* swiftlane */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftlane; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_13 /* swiftlane */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = swiftlane; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -30,6 +40,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FEEAAC841DECBD12007A7269 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FE097BE41DC2A53100F2AF2D /* NetworkHelper.swift */,
+				FEEA88061DE389490086134E /* JSON.swift */,
+				FE5111D41DC689BC00DA220C /* Regex.swift */,
+				FE5111D61DC68CB800DA220C /* PySwiftyRegex.swift */,
+				FEEAAC821DECB68F007A7269 /* SessionDelegate.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FEEAAC851DECC372007A7269 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				FEEAAC861DECC397007A7269 /* PortalClient.swift */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -45,7 +75,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -54,14 +84,14 @@
 				OBJ_11 /* docs */,
 				OBJ_12 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* swiftlane */,
-				FE097BE41DC2A53100F2AF2D /* NetworkHelper.swift */,
+				FEEAAC841DECBD12007A7269 /* Helpers */,
+				FEEAAC851DECC372007A7269 /* Clients */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -109,7 +139,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,8 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				FE5111D71DC68CB800DA220C /* PySwiftyRegex.swift in Sources */,
+				FEEA88071DE389490086134E /* JSON.swift in Sources */,
 				FE097BE51DC2A53100F2AF2D /* NetworkHelper.swift in Sources */,
+				FEEAAC871DECC397007A7269 /* PortalClient.swift in Sources */,
+				FEEAAC831DECB68F007A7269 /* SessionDelegate.swift in Sources */,
 				OBJ_19 /* main.swift in Sources */,
+				FE5111D51DC689BC00DA220C /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
