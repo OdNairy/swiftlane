@@ -1,14 +1,9 @@
 import Foundation
+import Result
+import SwiftyJSON
 
 let sessionConfiguration = URLSessionConfiguration.default
-sessionConfiguration.connectionProxyDictionary = [
-    kCFNetworkProxiesHTTPEnable as AnyHashable : true,
-    kCFNetworkProxiesHTTPSEnable as AnyHashable : true,
-    kCFStreamPropertyHTTPProxyPort as AnyHashable : 8888,
-    kCFStreamPropertyHTTPSProxyPort as AnyHashable: 8888,
-    kCFStreamPropertyHTTPProxyHost as AnyHashable : "127.0.0.1",
-    kCFStreamPropertyHTTPSProxyHost as AnyHashable: "127.0.0.1",
-]
+sessionConfiguration.useProxyIfAvailable()
 
 let session = URLSession(configuration:sessionConfiguration, delegate: SessionDelegate(), delegateQueue: nil)
 
@@ -18,6 +13,7 @@ let result = session.run("https://itunesconnect.apple.com/itc/static-resources/c
 let data = ["accountName":"roman.gardukevich@intellectsoft.net",
             "password":"WTJVj7dp>Y>}FaX8",
             "rememberMe":true].toJSONData()
+
 let defaultRequestHeaders = ["Content-Type":"application/json",
                              "X-Requested-With":"XMLHttpRequest",
                              "Accept":"application/json, text/javascript"]
