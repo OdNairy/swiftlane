@@ -10,6 +10,14 @@ import Foundation
 
 private let DefaultTimeoutLengthInSeconds: DispatchTimeInterval = .seconds(10)
 extension URLSession {
+    enum HTTPMethod: String {
+        case get, post, delete
+        
+        func toHTTPString() -> String {
+            return self.rawValue.uppercased()
+        }
+    }
+    
     @discardableResult func run(_ request: URLRequest) -> (data: String?, response: HTTPURLResponse?, error: Error?) {
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -41,6 +49,16 @@ extension URLSession {
                                 headers: [String:String]? = ["Content-Type":"application/json"]) -> (data: String?, response: HTTPURLResponse?, error: Error?) {
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = method
+        request.httpBody = data?.toJSONData()
+        request.allHTTPHeaderFields = headers
+        
+        return run(request)
+    }
+    
+    @discardableResult func run(method: HTTPMethod, url urlString: String, data: JSONConvertible? = nil,
+                                headers: [String:String]? = ["Content-Type":"application/json"]) -> (data: String?, response: HTTPURLResponse?, error: Error?) {
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = method.toHTTPString()
         request.httpBody = data?.toJSONData()
         request.allHTTPHeaderFields = headers
         
